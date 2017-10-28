@@ -33,7 +33,11 @@ extend type Query {
 
 This application (the API Gateway) stitches them together, by extending the `Address` Type with a `weather` field.
 
-### Setup
+### Running this example
+
+The easiest way to run this example is to use the Apollo Launchpad: https://launchpad.graphql.com/9q0nxlk9r
+
+### Local development
 
 - Create a `.env` file in the root of your project folder with the following keys:
   - `GRAPHCOOL_ADDRESS_ENDPOINT`
