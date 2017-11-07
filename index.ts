@@ -5,7 +5,7 @@ import * as cors from 'cors'
 import * as bodyParser from 'body-parser'
 import { graphqlExpress } from 'apollo-server-express'
 import { makeRemoteExecutableSchema, introspectSchema, mergeSchemas } from 'graphql-tools'
-import { express as playground } from 'graphql-playground/middleware'
+import { expressPlayground } from 'graphql-playground-middleware'
 import { request } from 'graphql-request'
 
 async function run() {
@@ -55,7 +55,7 @@ async function run() {
 
   const app = express()
   app.use('/graphql', cors(), bodyParser.json(), graphqlExpress({ schema: schema }))
-  app.use('/playground', playground({ endpoint: '/graphql' }))
+  app.use('/playground', expressPlayground({ endpoint: '/graphql' }))
 
   app.listen(3000, () => console.log('Server running. Open http://localhost:3000/playground to run queries.'))
 }
